@@ -6,6 +6,9 @@ authors = [{name = "Woo Jin Lee", email = "163913803+woojin-lee713@users.noreply
 requires-python = ">= 3.10"
 dependencies = []
 
+[project.scripts]
+wikiapp = "wikiapp.console:main"
+
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
@@ -18,6 +21,7 @@ platforms = ["osx-arm64"]
 wikiapp = { path = ".", editable = true }
 
 [tool.pixi.tasks]
+program = "python wikiapp/console.py"
 
 [tool.pixi.dependencies]
 python = ">=3.12.3,<3.13"
