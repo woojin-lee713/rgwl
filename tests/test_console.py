@@ -8,6 +8,16 @@ def runner():
 
 from wikiapp import console
 
+@pytest.fixture
+def mock_wikipedia_random_page(mocker):
+    return mocker.patch("wikiapp.wikipedia.random_page")
+
+#def test_main_uses_specified_language(runner, mock_wikipedia_random_page):
+    # runner.invoke(console.main, ["--language=", "es"])
+    #runner.invoke(console.main)
+    #print(">>>", mock_wikipedia_random_page.call_args)
+    #mock_wikipedia_random_page.assert_called_with(language="en")
+
 def test_main_prints_title(runner, mock_requests_get):
     result = runner.invoke(console.main)
     assert "Lorem Ipsum" in result.output
