@@ -1,9 +1,10 @@
-import click
-from wikiapp import __version__
-import requests
 import textwrap
 
-from wikiapp.wikipedia import API_URL, random_page
+import click
+
+from wikiapp import __version__
+from wikiapp.wikipedia import random_page
+
 
 @click.command()
 @click.option(
@@ -23,5 +24,6 @@ def main(language="en"):
     click.secho(title, fg="green")
     click.echo(textwrap.fill(extract))
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     main()

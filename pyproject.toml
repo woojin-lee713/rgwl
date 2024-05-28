@@ -48,12 +48,44 @@ python = "3.11.*"
 click = ">=8.1.3,<8.2"
 requests = ">=2.23.0,<2.33"
 
+#pixi add ruff --feature lintformat
+[tool.pixi.feature.lintformat.dependencies]
+ruff = ">=0.4.5,<0.5"
+pre-commit = ">=3.7.1,<3.8"
+
+[tool.pixi.feature.lintformat.tasks]
+lint = "ruff check"
+format = "ruff format"
+
 [tool.pixi.environments]
 default = {solve-group = "default"}
 test = {features = ["test"], solve-group = "default"}
+dev = {features = ["test", "lintformat"], solve-group = "default"}
 py310test = {features = ["test", "py310"], solve-group = "py310"}
 py311test = {features = ["test", "py311"], solve-group = "py311"}
 
 [tool.pyright]
 venvPath = "."
-venv = ".pixi/envs/test"
+venv = ".pixi/envs/dev"
+
+[tool.ruff.lint]
+select = [
+    # pycodestyle
+    "E",
+    "W",
+    # pyflakes
+    "F",
+    # McCabe
+    "C",
+    # Bugbear
+    "B",
+    # isort
+    "I",
+    # bandit
+    "S",
+]
+ignore = [
+    # bandit
+    "S101"
+]
+mccabe.max-complexity = 10
