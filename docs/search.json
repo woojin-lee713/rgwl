@@ -1,0 +1,42 @@
+[
+  {
+    "objectID": "wikipedia.html",
+    "href": "wikipedia.html",
+    "title": "Wikipedia Module",
+    "section": "",
+    "text": "from wikiapp.wikipedia import random_page, Page\nfrom nbdev import show_doc",
+    "crumbs": [
+      "Wikipedia Module"
+    ]
+  },
+  {
+    "objectID": "wikipedia.html#examples",
+    "href": "wikipedia.html#examples",
+    "title": "Wikipedia Module",
+    "section": "Examples",
+    "text": "Examples\n\npage = random_page()\nprint(\"TITLE:\", page.title)\nprint(\"EXTRACT:\", page.extract)\n\nTITLE: Renfe Class 321\nEXTRACT: The Renfe Class 321 is a class of diesel-electric locomotives operated by Renfe in Spain, designed by Alco and built by them and by Euskalduna under licence.\n\n\nIf you do this again, you will get another random page.\n\npage = random_page()\nprint(\"TITLE:\", page.title)\nprint(\"EXTRACT:\", page.extract)\n\nTITLE: Ben Hueso\nEXTRACT: Benjamin Hueso is an American businessman and politician who served in the California State Senate. A Democrat, he represented the 40th Senate District, which encompassed Imperial County and the border regions of San Diego County.\n\n\nYou can change the language if you want!\n\npage = random_page(language=\"fr\")\nprint(\"TITLE:\", page.title)\nprint(\"EXTRACT:\", page.extract)\n\nTITLE: Main d'Anvers\nEXTRACT: La mains d'Anvers est une pâtisserie d'origine belge flamande. Ce produit régional de la ville d'Anvers est reconnu par l'Union européenne comme spécialité traditionnelle garantie.",
+    "crumbs": [
+      "Wikipedia Module"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Wikiapp Docs",
+    "section": "",
+    "text": "Welcome to the documentation for Wikiapp! We are so glad to have you here.\nThis library will let you get random wikipedia page excerpts, in any language.\nYeah we know it does not do much! But it is a start.\n❯ pixi run program \n✨ Pixi task (program in default): python wikiapp/console.py\nBunetice\nBunetice is a village and municipality in Košice-okolie District in\nthe Kosice Region of eastern Slovakia.\n\n❯ pixi run program --language \"fr\"\n✨ Pixi task (program in default): python wikiapp/console.py --language fr\nToyota Sienta\nLa Sienta est une voiture produite par la marque japonaise Toyota,\nlancée en septembre 2003.\n\n❯ pixi run program -l de\n✨ Pixi task (program in default): python wikiapp/console.py -l de\nKunar (Fluss)\nDer Fluss Kunar, der in Pakistan auch Chitral genannt wird, ist\nungefähr 260 km lang und fließt in südwestlicher Richtung vom\nnordwestlichen Pakistan in das östliche Afghanistan.\n\n❯ wikiapp \nPangkor Laut Island\nPangkor Laut Island is a small island southwest of Pangkor Island,\nPerak, Malaysia.\n\n❯ wikiapp --language fr \nVajkovce\nVajkovce est un village de Slovaquie situé dans la région de Košice.\n\n❯ wikiapp -l es\nLamaze\nLamaze es una localidad de Santa Lucía, que forma parte del distrito\nde Choiseul.",
+    "crumbs": [
+      "Wikiapp Docs"
+    ]
+  },
+  {
+    "objectID": "console.html",
+    "href": "console.html",
+    "title": "Console Module",
+    "section": "",
+    "text": "from wikiapp.console import main\n\n\nfrom nbdev import show_doc\nfrom click.testing import CliRunner\n\n\n\n\n\n &lt;Command main&gt; (*args:Any, **kwargs:Any)\n\n*This is the console interface to ‘random_page’ function in wikipedia.py.\nIt comes with cool colors!*",
+    "crumbs": [
+      "Console Module"
+    ]
+  }
+]
