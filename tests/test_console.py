@@ -58,7 +58,9 @@ def test_main_prints_message_on_requests_error(
     assert "Error" in result.output
 
 
-def test_main_succeeds(runner: CliRunner) -> None:
+@pytest.mark.e2e
+def test_main_succeeds_in_production(runner: CliRunner) -> None:
     # runner = click.testing.CliRunner()
     result = runner.invoke(console.main)
+    print(">>>", result)
     assert result.exit_code == 0
