@@ -1,5 +1,3 @@
-from typing import Any
-
 import click
 import requests
 from pydantic import BaseModel, ValidationError

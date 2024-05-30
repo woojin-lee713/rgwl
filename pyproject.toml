@@ -73,9 +73,21 @@ typing = "mypy ."
 quarto = ">=1.4.550,<1.5"
 jupyterlab = ">=1.0.10,<4.3"
 
+[tool.pixi.feature.docs.tasks]
+docs = "mkdir -p docs; cd notebooks; nbdev_docs; cp -r _docs/* ../docs/; cd .."
+
+[tool.pixi.feature.build.dependencies]
+twine = ">=3.3.0,<5.2"
+build = ">=0.7.0,<0.8"
+
+[tool.pixi.feature.build.tasks]
+build = "python -m build"
+publish = "python -m twine upload --repository testpypi dist/*"
+
 [tool.pixi.environments]
 default = {solve-group = "default"}
 test = {features = ["test"], solve-group = "default"}
+build = {features = ["build"], solve-group = "default"}
 dev = {features = ["test", "lintformat", "typing", "docs"], solve-group = "default"}
 py310test = {features = ["test", "py310"], solve-group = "py310"}
 py311test = {features = ["test", "py311"], solve-group = "py311"}
